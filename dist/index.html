@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      type="image"
+      href="mtg.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>MTG Maker - DEV</title>
+</head>
+<body>
+    <h1 class="siteName">MTG Maker</h1>
+    <h3>Enter the following details and click submit</h3>
+    <div id="cardFormContainer">
+        <form id="cardForm">
+            <lable for ="cardName">Card Name:</lable>
+            <input type="text" id="cardName" name="cardName"><br>
+            <lable for ="manaCost">Card Mana Cost:</lable>
+            <input type="text" id="manaCost" name="manaCost"><br>
+            <lable for ="cardType">Card Type:</lable>
+            <input type="text" id="cardType" name="cardType"><br>
+            <lable for ="description">Card Description:</lable>
+            <input type="text" id="description" name="description"><br>
+            <lable for ="strength">Card Strength (ATK):</lable>
+            <input type="text" id="strength" name="strength"><br>
+            <lable for ="toughness">Card Toughness (DEF):</lable>
+            <input type="text" id="toughness" name="toughness"><br>
+            <lable for ="manaType">Mana Type: (DEF):</lable>
+            <input type="text" id="manaType" name="manaType"><br>
+            <input type="submit" id="submitButton" value="Generate">
+        </form>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>
