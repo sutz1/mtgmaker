@@ -1,3 +1,5 @@
 node_modules
 misc
 private
+.env
+.env.test
