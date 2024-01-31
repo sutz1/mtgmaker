@@ -19,7 +19,7 @@ function CardForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/submitCard", {
+      const response = await fetch("http://localhost:3000/cards", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -113,10 +113,11 @@ function CardForm() {
             onChange={handleChange}
           />
         </label>
-      </div>
-      <button className="submitButton" type="submit">
+        <br />
+        <button className="submitButton" type="submit">
         Create Card
       </button>
+      </div>
     </form>
   );
 }

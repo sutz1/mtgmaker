@@ -49,7 +49,7 @@ function CardForm() {
     const handleSubmit = (e) => __awaiter(this, void 0, void 0, function* () {
         e.preventDefault();
         try {
-            const response = yield fetch("http://localhost:3000/submitCard", {
+            const response = yield fetch("http://localhost:3000/cards", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -99,8 +99,9 @@ function CardForm() {
         react_1.default.createElement("div", { className: "field" },
             react_1.default.createElement("label", null,
                 "Mana Type:",
-                react_1.default.createElement("input", { type: "text", name: "manaType", value: cardData.manaType, onChange: handleChange }))),
-        react_1.default.createElement("button", { className: "submitButton", type: "submit" }, "Create Card")));
+                react_1.default.createElement("input", { type: "text", name: "manaType", value: cardData.manaType, onChange: handleChange })),
+            react_1.default.createElement("br", null),
+            react_1.default.createElement("button", { className: "submitButton", type: "submit" }, "Create Card"))));
 }
 exports.default = CardForm;
 //# sourceMappingURL=CardForm.js.map

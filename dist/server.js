@@ -23,7 +23,7 @@ const uri = creds_1.MONGO_DB_URI;
 const mongoClient = new mongodb_1.MongoClient(uri);
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
-app.post("/submitCard", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.post("/cards", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const cardData = req.body;
     try {
         yield mongoClient.connect();
@@ -52,7 +52,7 @@ function addCardsToMongo(card) {
     return __awaiter(this, void 0, void 0, function* () { });
 }
 exports.addCardsToMongo = addCardsToMongo;
-app.get("/getCardByName/:name", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/cards/:name", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield mongoClient.connect();
         const db = mongoClient.db("mtg_maker");
@@ -74,7 +74,7 @@ app.get("/getCardByName/:name", (req, res) => __awaiter(void 0, void 0, void 0, 
         yield mongoClient.close();
     }
 }));
-app.get("/getAllCards", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/cards", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield mongoClient.connect();
         const db = mongoClient.db("mtg_maker");

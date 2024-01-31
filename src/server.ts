@@ -12,7 +12,7 @@ const mongoClient = new MongoClient(uri);
 app.use(cors());
 app.use(express.json());
 
-app.post("/submitCard", async (req, res) => {
+app.post("/cards", async (req, res) => {
   const cardData = req.body;
   try {
     await mongoClient.connect();
@@ -42,7 +42,7 @@ app.listen(PORT, () => {
 
 export async function addCardsToMongo(card: Card) {}
 
-app.get("/getCardByName/:name", async (req, res) => {
+app.get("/cards/:name", async (req, res) => {
   try {
     await mongoClient.connect();
 
@@ -65,7 +65,7 @@ app.get("/getCardByName/:name", async (req, res) => {
   }
 });
 
-app.get("/getAllCards", async (req, res) => {
+app.get("/cards", async (req, res) => {
   try {
     await mongoClient.connect();
 
