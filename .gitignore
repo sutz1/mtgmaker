@@ -4,4 +4,7 @@ private
 .env
 .env.test
 *.d.ts
-*.js*
+/dist/back-end
+/dist/front-end
+/dist/models
+*bundle.js*
