@@ -3,3 +3,5 @@ misc
 private
 .env
 .env.test
+*.d.ts
+*.js*

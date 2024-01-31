@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { MongoClient } from "mongodb";
 import { Card } from "./models/card";
-import { MONGO_DB_URI } from "./private/creds";
+import { MONGO_DB_URI } from "../private/creds";
 
 const app = express();
 const PORT = 3000;
@@ -13,7 +13,8 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/cards", async (req, res) => {
-  const cardData = req.body;
+  const cardData: Card = req.body;
+  console.log(`Card data Type : ${typeof cardData}`);
   try {
     await mongoClient.connect();
     const db = mongoClient.db("mtg_maker");
