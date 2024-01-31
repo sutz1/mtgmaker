@@ -35,12 +35,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 function CardForm() {
     const [cardData, setCardData] = (0, react_1.useState)({
-        cardName: '',
-        description: '',
-        strength: '',
-        toughness: '',
-        manaCost: '',
-        manaType: '',
+        cardName: "",
+        description: "",
+        strength: "",
+        toughness: "",
+        manaCost: "",
+        manaType: "",
     });
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -49,52 +49,58 @@ function CardForm() {
     const handleSubmit = (e) => __awaiter(this, void 0, void 0, function* () {
         e.preventDefault();
         try {
-            const response = yield fetch('http://localhost:3000/submitCard', {
-                method: 'POST',
+            const response = yield fetch("http://localhost:3000/submitCard", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(cardData),
             });
             if (response.ok) {
-                console.log('Card created successfully!');
+                console.log("Card created successfully!");
                 setCardData({
-                    cardName: '',
-                    description: '',
-                    strength: '',
-                    toughness: '',
-                    manaCost: '',
-                    manaType: '',
+                    cardName: "",
+                    description: "",
+                    strength: "",
+                    toughness: "",
+                    manaCost: "",
+                    manaType: "",
                 });
             }
             else {
-                console.error('Error creating card.');
+                console.error("Error creating card.");
             }
         }
         catch (e) {
-            console.error('Error:', e);
+            console.error("Error:", e);
         }
     });
     return (react_1.default.createElement("form", { onSubmit: handleSubmit },
-        react_1.default.createElement("label", null,
-            "Card Name:",
-            react_1.default.createElement("input", { type: "text", name: "cardName", value: cardData.cardName, onChange: handleChange })),
-        react_1.default.createElement("label", null,
-            "Description:",
-            react_1.default.createElement("input", { type: "text", name: "description", value: cardData.description, onChange: handleChange })),
-        react_1.default.createElement("label", null,
-            "Strength:",
-            react_1.default.createElement("input", { type: "text", name: "strength", value: cardData.strength, onChange: handleChange })),
-        react_1.default.createElement("label", null,
-            "Toughness:",
-            react_1.default.createElement("input", { type: "text", name: "toughness", value: cardData.toughness, onChange: handleChange })),
-        react_1.default.createElement("label", null,
-            "Mana Cost:",
-            react_1.default.createElement("input", { type: "text", name: "manaCost", value: cardData.manaCost, onChange: handleChange })),
-        react_1.default.createElement("label", null,
-            "Mana Type:",
-            react_1.default.createElement("input", { type: "text", name: "manaType", value: cardData.manaType, onChange: handleChange })),
-        react_1.default.createElement("button", { type: "submit" }, "Create Card")));
+        react_1.default.createElement("div", { className: "field" },
+            react_1.default.createElement("label", null,
+                "Card Name:",
+                react_1.default.createElement("input", { type: "text", name: "cardName", value: cardData.cardName, onChange: handleChange }))),
+        react_1.default.createElement("div", { className: "field" },
+            react_1.default.createElement("label", null,
+                "Description:",
+                react_1.default.createElement("input", { type: "text", name: "description", value: cardData.description, onChange: handleChange }))),
+        react_1.default.createElement("div", { className: "field" },
+            react_1.default.createElement("label", null,
+                "Strength:",
+                react_1.default.createElement("input", { type: "text", name: "strength", value: cardData.strength, onChange: handleChange }))),
+        react_1.default.createElement("div", { className: "field" },
+            react_1.default.createElement("label", null,
+                "Toughness:",
+                react_1.default.createElement("input", { type: "text", name: "toughness", value: cardData.toughness, onChange: handleChange }))),
+        react_1.default.createElement("div", { className: "field" },
+            react_1.default.createElement("label", null,
+                "Mana Cost:",
+                react_1.default.createElement("input", { type: "text", name: "manaCost", value: cardData.manaCost, onChange: handleChange }))),
+        react_1.default.createElement("div", { className: "field" },
+            react_1.default.createElement("label", null,
+                "Mana Type:",
+                react_1.default.createElement("input", { type: "text", name: "manaType", value: cardData.manaType, onChange: handleChange }))),
+        react_1.default.createElement("button", { className: "submitButton", type: "submit" }, "Create Card")));
 }
 exports.default = CardForm;
 //# sourceMappingURL=CardForm.js.map

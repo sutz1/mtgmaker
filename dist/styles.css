@@ -1,5 +1,35 @@
 * {
     background-color: black;
     color: white;
+    font-family: 'Source Code Pro';
+}
+
+header {
     text-align: center;
 }
+
+.description {
+    text-align: center;
+}
+
+form {
+    display: grid;
+    text-align: center;
+  }
+  
+
+.field {
+    margin-top: 1vh;
+}
+
+button {
+    width: 10vh;
+    margin-top: 5%;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    transition-duration: 3ms;
+}
+  
