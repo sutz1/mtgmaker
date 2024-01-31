@@ -1,1 +1,1 @@
-declare const cardForm: HTMLFormElement;
+export {};
